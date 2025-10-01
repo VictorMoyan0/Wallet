@@ -7,7 +7,7 @@ function Login() {
                 <input type="password" name="passwd" placeholder="Contraseña"/>
                 <button type="submit">Enviar</button>
             </form>
-            <button className="btn-register">Registrarse</button>
+            <button className="btn-register" onClick={() => navigate('./Registrar.jsx')}>Registrarse</button>
         </div>
     );
 }
