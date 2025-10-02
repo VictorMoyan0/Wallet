@@ -49,8 +49,6 @@ app.post("/login", async (req, res) => {
 
   const isMatch = await bcrypt.compare(passwd, usuario.password);
   if (!isMatch) return res.status(400).json({ error: "Contraseña incorrecta" });
-
-  res.json({ mensaje: "Login exitoso" });
 });
 
 // ------------------- Servidor -------------------

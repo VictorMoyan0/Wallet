@@ -17,7 +17,6 @@ function Login() {
       const data = await res.json();
 
       if (res.ok) {
-        alert(data.mensaje);
         navigate("/menu");
       } else {
         alert(data.error);
