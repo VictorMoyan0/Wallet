@@ -5,9 +5,15 @@ import './Style.css';
 
 function App() {
   return (
-    <>
-      <Login />
-    </>
+    <BrowserRouter>
+      <Routes>
+        {/* Raíz = Login */}
+        <Route path="/" element={<Login />} />
+
+        {/* Página de registro */}
+        <Route path="/registrar" element={<Registrar />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
