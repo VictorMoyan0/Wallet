@@ -1,6 +1,6 @@
 function Menu() {
     return (
-        <p>Welcome</p>
+        <h1>Welcome</h1>
     );
 }
 export default Menu;
