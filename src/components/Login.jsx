@@ -18,8 +18,7 @@ function Login() {
 
       if (res.ok) {
         alert(data.mensaje);
-        // Podés redirigir a otra página si el login es exitoso
-        // navigate("/menu");
+        navigate("/Menu.jsx");
       } else {
         alert(data.error);
       }
