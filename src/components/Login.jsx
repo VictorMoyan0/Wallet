@@ -34,7 +34,7 @@ function Login() {
             <form onSubmit={handleSubmit}>
                 <input type="text" name="user" placeholder="Usuario"/>
                 <input type="password" name="passwd" placeholder="Contraseña"/>
-                <button type="submit">Enviar</button>
+                <button type="submit">Entrar</button>
             </form>
             <button className="btn-register" onClick={() => navigate("/registrar")}>Registrarse</button>
         </div>
