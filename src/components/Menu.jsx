@@ -1,7 +1,12 @@
 function Menu() {
     return (
         <>
-            <h2>Mi Billetera</h2>
+            <div className="menu-options">
+                <h2>Mi Billetera</h2>
+                <p>Saldo ARS</p>
+                <button>Depositar</button>
+                <button>Transferir</button>
+            </div>
         </>
     );
 }
