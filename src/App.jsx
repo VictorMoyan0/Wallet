@@ -12,6 +12,8 @@ function App() {
 
         {/* Página de registro */}
         <Route path="/registrar" element={<Registrar />} />
+        {/* Página de menú (después del login) */}
+        <Route path="/menu" element={<Menu />} />
       </Routes>
     </BrowserRouter>
   )

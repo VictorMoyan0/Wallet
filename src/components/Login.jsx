@@ -18,7 +18,7 @@ function Login() {
 
       if (res.ok) {
         alert(data.mensaje);
-        navigate("/Menu.jsx");
+        navigate("/menu");
       } else {
         alert(data.error);
       }
