@@ -1,9 +1,7 @@
 function Menu() {
     return (
         <>
-            <div className="menu-options">
-                <h2>Mi Billetera</h2>
-            </div>
+            <h2>Mi Billetera</h2>
         </>
     );
 }
