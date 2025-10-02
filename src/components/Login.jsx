@@ -17,6 +17,7 @@ function Login() {
       const data = await res.json();
 
       if (res.ok) {
+        console.log("Login exitoso, navegando a /menu");
         navigate("/menu");
       } else {
         alert(data.error);
