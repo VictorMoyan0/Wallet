@@ -2,8 +2,11 @@ import express from "express";
 import bodyParser from "body-parser";
 import bcrypt from "bcryptjs";
 import fs from "fs";
+import cors from "cors";
 
 const app = express();
+// Permite que React (u otro origen) haga peticiones al backend
+app.use(cors()); // 👈 va antes de las rutas
 app.use(bodyParser.json());
 
 // Archivo donde vamos a guardar los usuarios
