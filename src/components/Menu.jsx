@@ -1,4 +1,7 @@
+import { useLocation } from "react-router-dom";
 function Menu() {
+    const location = useLocation();
+    const { user } = location.state || {}; // saco el user que vino del login
     return (
         <>
             <div className="menu-options">
