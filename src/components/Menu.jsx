@@ -10,6 +10,7 @@ function Menu() {
                 <p>Saldo: ARS {user?.saldo ?? 0}</p>
                 <button>Depositar</button>
                 <button>Transferir</button>
+                <button>Cerrar Sesión</button>
             </div>
         </>
     );
