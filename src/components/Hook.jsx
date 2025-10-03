@@ -9,7 +9,7 @@ export default function useAutoLogout(timeout = 2 * 60 * 1000) {
     clearTimeout(timerRef.current);
     timerRef.current = setTimeout(() => {
       alert("Sesión cerrada por inactividad");
-      navigate("/login");
+      navigate("/");
     }, timeout);
   };
 
