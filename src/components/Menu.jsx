@@ -1,7 +1,9 @@
 import { useLocation } from "react-router-dom";
+import useAutoLogout from "./Hook";
 function Menu() {
     const location = useLocation();
     const { user } = location.state || {}; // saco el user que vino del login
+    useAutoLogout(2 * 60 * 1000); // 2 minutos de inactividad
     return (
         <>
             <div className="menu-options">
