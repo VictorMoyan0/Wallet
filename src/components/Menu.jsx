@@ -3,6 +3,7 @@ import useAutoLogout from "./Hook";
 function Menu() {
     const location = useLocation();
     const { user } = location.state || {}; // saco el user que vino del login
+    useAutoLogout();
     return (
         <>
             <div className="menu-options">
