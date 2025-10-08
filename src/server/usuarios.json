@@ -1,19 +1,3 @@
 [
-  {
-    "user": "test",
-    "password": "$2b$10$WFn9erBrYx5Ss5LmRb8XFeuSgWoQ8Z.38TWGsYpwkjVmb4qEXVSXW"
-  },
-  {
-    "user": "test1",
-    "password": "$2b$10$DaoJYvJVbgKb/qzQuDCZ0.5Enil1EcnWTdYl8yIZ2.w1WXxsCGfvm"
-  },
-  {
-    "user": "victor",
-    "password": "$2b$10$RpX8pP19TUMFlxWazimE7eOAID3CghizssjbIOa2BhPCJrvecl1ZW",
-    "saldo": 0
-  },
-  {
-    "user": "victor",
-    "password": "$2b$10$RpX8pP19TUMFlxWazimE7eOAID3CghizssjbIOa2BhPCJrvecl1ZW"
-  }
+
 ]
