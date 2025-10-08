@@ -1,3 +1,20 @@
 [
-
+  {
+    "user": "victor",
+    "password": "$2b$10$IY3EedSXJtxstc4ueTh36.G24ubQGogvF.jjIinYDgXdiHruF.1Cq",
+    "saldo": 0
+  },
+  {
+    "user": "victor",
+    "password": "$2b$10$IY3EedSXJtxstc4ueTh36.G24ubQGogvF.jjIinYDgXdiHruF.1Cq"
+  },
+  {
+    "user": "prueba",
+    "password": "$2b$10$TV9VluybrW1V3z4lRUjR3uty.G4yK707bUkZCyJ88MA6an9SE4xPC",
+    "saldo": 0
+  },
+  {
+    "user": "prueba",
+    "password": "$2b$10$TV9VluybrW1V3z4lRUjR3uty.G4yK707bUkZCyJ88MA6an9SE4xPC"
+  }
 ]
