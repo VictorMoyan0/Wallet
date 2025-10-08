@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate  } from "react-router-dom";
 import useAutoLogout from "./Hook";
 function Menu() {
     const location = useLocation();
