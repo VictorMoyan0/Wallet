@@ -36,6 +36,8 @@ app.post("/registrar", async (req, res) => {
   //Crea un nuevo usuario con saldo 0
   usuarios.push({ user, password: hashedPassword, saldo: 0 });
 
+  // Guardar usuarios en el archivo
+  fs.writeFileSync(FILE_PATH, JSON.stringify(usuarios, null, 2));
   res.json({ mensaje: "Usuario registrado correctamente" });
 });
 
