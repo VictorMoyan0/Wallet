@@ -29,13 +29,10 @@ app.post("/registrar", async (req, res) => {
   if (usuarios.find(u => u.user === user)) {
     return res.status(400).json({ error: "Usuario ya existe" });
   }
-
   // Hashear contraseña
   const hashedPassword = await bcrypt.hash(passwd, 10);
-
   //Crea un nuevo usuario con saldo 0
   usuarios.push({ user, password: hashedPassword, saldo: 0 });
-
   // Guardar usuarios en el archivo
   fs.writeFileSync(FILE_PATH, JSON.stringify(usuarios, null, 2));
   res.json({ mensaje: "Usuario registrado correctamente" });
