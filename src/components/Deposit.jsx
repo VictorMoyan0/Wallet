@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Deposit({ onDeposit }) {
+function Deposit({user, onDeposit }) {
   const [amount, setMonto] = useState("");
   // Controla el input, permite solo números y un punto decimal
   const handleChange = (e) => {
