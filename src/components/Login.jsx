@@ -35,7 +35,7 @@ function Login() {
                 <input type="password" name="passwd" placeholder="Contraseña"/>
                 <button type="submit">Entrar</button>
             </form>
-            <button className="btn-register" onClick={() => navigate("/registrar")}>Registrarse</button>
+            <button className="btn-register" onClick={() => navigate("/register")}>Registrarse</button>
         </div>
     );
 }
