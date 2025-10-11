@@ -29,8 +29,28 @@ function Register() {
         <div className="register-container">
             <h2>Registrarse</h2>
             <form onSubmit={handleSubmit}>
-                <input type="text" name="firstName" placeholder="Nombre" required />
-                <input type="text" name="lastName" placeholder="Apellido" required />
+                <input
+                  type="text"
+                  name="firstName"
+                  placeholder="Nombre"
+                  required
+                  pattern="[A-Za-zÀ-ÿ\s]+"  
+                  title="Solo se permiten letras y espacios"
+                  onInput={(e) => {
+                    e.target.value = e.target.value.replace(/[^A-Za-zÀ-ÿ\s]/g, "");
+                  }}
+                />
+                <input
+                  type="text"
+                  name="lastName"
+                  placeholder="Apellido"
+                  required
+                  pattern="[A-Za-zÀ-ÿ\s]+"
+                  title="Solo se permiten letras y espacios"
+                  onInput={(e) => {
+                    e.target.value = e.target.value.replace(/[^A-Za-zÀ-ÿ\s]/g, "");
+                  }}
+                />
                 <input type="password" name="passwd" placeholder="Contraseña"/>
                 <button type="submit">Enviar</button>
             </form>
