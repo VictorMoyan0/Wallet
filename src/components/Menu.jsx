@@ -28,10 +28,9 @@ function Menu() {
                 <h2>Mi Billetera</h2>
                 <p>Usuario: {user?.user ?? "Invitado"}</p>
                 <p>Saldo: ARS {user?.balance ?? 0}</p>
-                <button onClick={() => setShowDeposit(true)}>Depositar</button>
+                <button onClick={handleDeposit}>Depositar</button>
                 <button>Transferir</button>
                 <ButtonLogout />
-                {showDeposit && <Deposit user={user} onDeposit={handleDeposit} />}
             </div>
         </>
     );
