@@ -4,8 +4,9 @@ import useAutoLogout from "./Hook";
 import ButtonLogout from "./Buttonlogout";
 import Deposit from "./Deposit";
 
-function Menu() {
+function Menu({ user }) {
     const location = useLocation();
+    const [balance, setBalance] = useState(user.balance);
     // User en estado para poder actualizar balance
     const [user, setUser] = useState(location.state?.user ?? null);
     const [showDeposit, setShowDeposit] = useState(false); // controla el formulario
