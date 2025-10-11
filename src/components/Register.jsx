@@ -36,4 +36,4 @@ function Register() {
         </div>
     );
 }
-export default Registrar;
+export default Register;
