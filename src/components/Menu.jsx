@@ -26,7 +26,7 @@ function Menu() {
                 <button onClick={() => setShowDeposit(true)}>Depositar</button>
                 <button>Transferir</button>
                 <ButtonLogout />
-                {showDeposit && <Deposit onDeposit={handleDeposit} />}
+                {showDeposit && <Deposit user={user} onDeposit={handleDeposit} />}
             </div>
         </>
     );
