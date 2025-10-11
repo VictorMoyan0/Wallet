@@ -14,7 +14,7 @@ function Menu() {
         const newBalance = (user?.balance ?? 0) + amount;
         const updatedUser = { ...user, balance: newBalance };
         setUser(updatedUser);
-        alert(`Deposit successful: ARS ${amount}`);
+        alert(`Deposito completado: ARS ${amount}`);
         setShowDeposit(false); // cerrar formulario
     };
     return (
