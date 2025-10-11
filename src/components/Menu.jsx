@@ -13,10 +13,7 @@ function Menu() {
     });
     const [showDeposit, setShowDeposit] = useState(false); // controla el formulario
     useAutoLogout(); // uso el hook para auto logout
-    const handleDeposit = () => {
-        navigate("/deposit", { state: { user, onDeposit: handleDepositFromDeposit } });
-    };
-    const handleDepositFromDeposit = (newBalance) => {
+    const handleDeposit = (newBalance) => {
         const updatedUser = { ...user, balance: newBalance };
         setUser(updatedUser);
         localStorage.setItem("user", JSON.stringify(updatedUser));
