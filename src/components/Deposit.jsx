@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Deposit({ onDepositar }) {
+function Deposit({ onDeposit }) {
   const [monto, setMonto] = useState("");
   // Controla el input, permite solo números y un punto decimal
   const handleChange = (e) => {
@@ -12,12 +12,12 @@ function Deposit({ onDepositar }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const numero = parseFloat(monto);
-    if (isNaN(numero) || numero <= 0) {
+    const number = parseFloat(amount);
+    if (isNaN(number) || number <= 0) {
       alert("Ingrese un monto válido");
       return;
     }
-    onDepositar(numero); // llama a la función de Menu.jsx
+    onDeposit(number); // llama a la función de Menu.jsx
     setMonto("");        // limpia el input
   };
   return (
@@ -26,7 +26,7 @@ function Deposit({ onDepositar }) {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          value={monto}
+          value={amount}
           onChange={handleChange}
           placeholder="Ingrese monto"
           inputMode="decimal"
