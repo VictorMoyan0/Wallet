@@ -8,7 +8,7 @@ function Register() {
     const lastName = e.target.lastName.value;
     const passwd = e.target.passwd.value;
     try {
-      const res = await fetch("http://localhost:3001/registrar", {
+      const res = await fetch("http://localhost:3001/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ firstName, lastName, passwd }),
