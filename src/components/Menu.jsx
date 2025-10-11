@@ -16,6 +16,7 @@ function Menu() {
     const handleDeposit = (newBalance) => {
         const updatedUser = { ...user, balance: newBalance };
         setUser(updatedUser);
+        localStorage.setItem("user", JSON.stringify(updatedUser));
         setShowDeposit(false); // Cierra el formulario
     };
     return (
