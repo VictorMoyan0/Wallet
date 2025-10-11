@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-function Registrar() {
+function Register() {
     const navigate = useNavigate();
     const handleSubmit = async (e) => {
     e.preventDefault(); // evita recargar la página

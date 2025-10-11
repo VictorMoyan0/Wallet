@@ -1,6 +1,6 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
-import Registrar from "./components/Registrar";
+import Registrar from "./components/Register";
 import Menu from "./components/Menu";
 import './Style.css';
 
