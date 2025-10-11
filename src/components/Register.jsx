@@ -28,8 +28,8 @@ function Register() {
         <div className="register-container">
             <h2>Registrarse</h2>
             <form onSubmit={handleSubmit}>
-                <input type="text" name="first-name" placeholder="Nombre"/>
-                <input type="text" name="last-name" placeholder="Apellido"/>
+                <input type="text" name="firstName" placeholder="Nombre" required />
+                <input type="text" name="lastName" placeholder="Apellido" required />
                 <input type="password" name="passwd" placeholder="Contraseña"/>
                 <button type="submit">Enviar</button>
             </form>
