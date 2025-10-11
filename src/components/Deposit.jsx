@@ -49,6 +49,7 @@ function Deposit({user, onDeposit }) {
         />
         <button type="submit">Depositar</button>
       </form>
+      <button onClick={() => navigate("/menu", { state: { user } })}>Cancelar</button>
     </div>
   );
 }
