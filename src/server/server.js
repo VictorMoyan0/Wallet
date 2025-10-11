@@ -38,7 +38,7 @@ function createUsername(firstName, lastName) {
 // ------------------- Rutas -------------------
 
 // Registrar usuario
-app.post("/registrar", async (req, res) => {
+app.post("/register", async (req, res) => {
   const { firstName, lastName, passwd } = req.body;
   const username = generarUsername(firstName, lastName);
   if (usuarios.find(u => u.user === username)) {
