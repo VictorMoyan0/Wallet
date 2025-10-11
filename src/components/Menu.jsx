@@ -8,7 +8,7 @@ function Menu() {
         <>
             <div className="menu-options">
                 <h2>Mi Billetera</h2>
-                <p>Usuario: {user?.username ?? "Invitado"}</p>
+                <p>Usuario: {user?.user ?? "Invitado"}</p>
                 <p>Saldo: ARS {user?.saldo ?? 0}</p>
                 <button>Depositar</button>
                 <button>Transferir</button>
