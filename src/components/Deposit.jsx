@@ -24,7 +24,7 @@ function Deposit({user, onDeposit }) {
     });
     const data = await res.json();
     if (res.ok) {
-      onDeposit(number); // actualiza el balance en Menu.jsx
+      onDeposit(data.balance); // actualiza el balance en Menu.jsx
       alert(`Depósito completado: ARS ${data.balance}`);
     } else {
       alert(data.error);

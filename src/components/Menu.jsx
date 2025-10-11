@@ -4,19 +4,16 @@ import useAutoLogout from "./Hook";
 import ButtonLogout from "./Buttonlogout";
 import Deposit from "./Deposit";
 
-function Menu({ user }) {
+function Menu() {
     const location = useLocation();
-    const [balance, setBalance] = useState(user.balance);
     // User en estado para poder actualizar balance
     const [user, setUser] = useState(location.state?.user ?? null);
     const [showDeposit, setShowDeposit] = useState(false); // controla el formulario
     useAutoLogout(); // uso el hook para auto logout
-    const handleDeposit = (amount) => {
-        const newBalance = (user?.balance ?? 0) + amount;
+    const handleDeposit = (newBalance) => {
         const updatedUser = { ...user, balance: newBalance };
         setUser(updatedUser);
-        alert(`Deposito completado: ARS ${amount}`);
-        setShowDeposit(false); // cerrar formulario
+        setShowDeposit(false); // Cierra el formulario
     };
     return (
         <>
