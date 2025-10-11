@@ -40,14 +40,11 @@ app.post("/registrar", async (req, res) => {
 // Login usuario
 app.post("/login", async (req, res) => {
   const { user, passwd } = req.body;
-
   const usuario = usuarios.find(u => u.user === user);
   if (!usuario) return res.status(400).json({ error: "Usuario no encontrado" });
-
-  const isMatch = await bcrypt.compare(passwd, usuario.password);
+    const isMatch = await bcrypt.compare(passwd, usuario.password);
   if (!isMatch) return res.status(400).json({ error: "Contraseña incorrecta" });
-
-  res.status(200).json({ mensaje: "Login exitoso", user: usuario.user });
+    res.status(200).json({ mensaje: "Login exitoso", user: usuario.user });
 });
 
 // Deposito usuario
