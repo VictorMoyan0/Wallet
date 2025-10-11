@@ -21,7 +21,7 @@ if (fs.existsSync(FILE_PATH)) {
 
 // Generar un CBU aleatorio (10 dígitos)
 function createCBU() {
-  return "CBU" + Math.floor(1000000000 + Math.random() * 9000000000);
+  return Math.floor(1000000000 + Math.random() * 9000000000);
 }
 
 // Generar alias único (inicial + apellido + 4 dígitos)
