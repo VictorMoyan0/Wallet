@@ -4,7 +4,8 @@ function Register() {
     const navigate = useNavigate();
     const handleSubmit = async (e) => {
     e.preventDefault(); // evita recargar la página
-    const user = e.target.user.value;
+    const firstName = e.target.firstName.value;
+    const lastName = e.target.lastName.value;
     const passwd = e.target.passwd.value;
     try {
       const res = await fetch("http://localhost:3001/registrar", {
