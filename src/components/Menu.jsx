@@ -5,7 +5,6 @@ import Deposit from "./Deposit";
 
 function Menu() {
     const location = useLocation();
-    const { user } = location.state || {}; // saco el user que vino del login
     // User en estado para poder actualizar saldo
     const [user, setUser] = useState(location.state?.user ?? null);
     const [showDeposit, setShowDeposit] = useState(false); // controla el formulario
