@@ -39,19 +39,32 @@ function createUsername(firstName, lastName) {
 
 // Registrar usuario
 app.post("/registrar", async (req, res) => {
-  const { user, passwd } = req.body;
-  // Revisar si el usuario ya existe
-  if (usuarios.find(u => u.user === user)) {
+  const { firstName, lastName, passwd } = req.body;
+  const username = generarUsername(firstName, lastName);
+  if (usuarios.find(u => u.user === username)) {
     return res.status(400).json({ error: "Usuario ya existe" });
   }
-  // Hashear contraseña
   const hashedPassword = await bcrypt.hash(passwd, 10);
-  //Crea un nuevo usuario con saldo 0
-  usuarios.push({ user, password: hashedPassword, balance: 0 });
-  // Guardar usuarios en el archivo
+  const cbu = generarCBU();
+  const alias = generarAlias(firstName, lastName);
+  usuarios.push({ 
+    user: username, 
+    password: hashedPassword, 
+    balance: 0, 
+    cbu, 
+    alias, 
+    firstName, 
+    lastName 
+  });
   fs.writeFileSync(FILE_PATH, JSON.stringify(usuarios, null, 2));
-  res.json({ mensaje: "Usuario registrado correctamente" });
+  res.json({ 
+    mensaje: "Usuario registrado correctamente", 
+    user: username, 
+    alias, 
+    cbu 
+  });
 });
+
 
 // Login usuario
 app.post("/login", async (req, res) => {
