@@ -1,9 +1,6 @@
 import { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-function Deposit() {
-  const navigate = useNavigate();
-  const storedUser = localStorage.getItem("user");
-  const user = storedUser ? JSON.parse(storedUser) : null;
+
+function Deposit({user, onDeposit }) {
   const [amount, setAmount] = useState("");
   // Controla el input, permite solo números y un punto decimal
   const handleChange = (e) => {
@@ -27,9 +24,8 @@ function Deposit() {
     });
     const data = await res.json();
     if (res.ok) {
-      onDeposit(data.balance); // Actualiza balance en Menu.jsx
+      onDeposit(data.balance); // actualiza el balance en Menu.jsx
       alert(`Depósito completado: ARS ${number}`);
-      navigate("/menu", { state: { user: { ...user, balance: data.balance } } }); // Regresa al menú
     } else {
       alert(data.error);
     }
@@ -53,7 +49,6 @@ function Deposit() {
         />
         <button type="submit">Depositar</button>
       </form>
-      <button onClick={() => navigate("/menu", { state: { user } })}>Cancelar</button>
     </div>
   );
 }
