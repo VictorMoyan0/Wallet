@@ -7,7 +7,10 @@ import Deposit from "./Deposit";
 function Menu() {
     const location = useLocation();
     // User en estado para poder actualizar balance
-    const [user, setUser] = useState(location.state?.user ?? null);
+    const [user, setUser] = useState(() => {
+        const storedUser = localStorage.getItem("user");
+        return storedUser ? JSON.parse(storedUser) : location.state?.user ?? null;
+    });
     const [showDeposit, setShowDeposit] = useState(false); // controla el formulario
     useAutoLogout(); // uso el hook para auto logout
     const handleDeposit = (newBalance) => {
