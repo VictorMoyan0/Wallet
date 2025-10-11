@@ -1,5 +1,6 @@
 import { useLocation, useNavigate  } from "react-router-dom";
 import useAutoLogout from "./Hook";
+import ButtonLogout from "./Buttonlogout";
 function Menu() {
     const location = useLocation();
     const { user } = location.state || {}; // saco el user que vino del login
@@ -14,6 +15,7 @@ function Menu() {
                 <button>Transferir</button>
                 <button>Cerrar Sesión</button>
             </div>
+            <ButtonLogout />
         </>
     );
 }
