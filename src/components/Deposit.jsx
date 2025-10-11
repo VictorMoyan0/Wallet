@@ -1,12 +1,12 @@
 import { useState } from "react";
 
 function Deposit({user, onDeposit }) {
-  const [amount, setMonto] = useState("");
+  const [amount, setAmount] = useState("");
   // Controla el input, permite solo números y un punto decimal
   const handleChange = (e) => {
     const value = e.target.value;
     if (/^\d*\.?\d*$/.test(value)) {
-      setMonto(value);
+      setAmount(value);
     }
   };
   const handleSubmit = async (e) => {
@@ -33,7 +33,7 @@ function Deposit({user, onDeposit }) {
     console.error(err);
     alert("Error al conectarse al servidor");
   }
-  setMonto(""); // limpia el input
+  setAmount(""); // limpia el input
 };
 
   return (
