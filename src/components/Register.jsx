@@ -15,7 +15,7 @@ function Register() {
       });
       const data = await res.json();
       if (res.ok) {
-        alert(`Usuario creado:\nUsername: ${data.user}\nAlias: ${data.alias}\nCBU: ${data.cbu}`);
+        alert(`Usuario: ${data.user}\nAlias: ${data.alias}\nCBU: ${data.cbu}`);
         navigate("/"); // redirige al login después de registrar
       } else {
         alert(data.error);
