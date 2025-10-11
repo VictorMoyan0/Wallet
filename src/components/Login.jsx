@@ -17,7 +17,7 @@ function Login() {
       const data = await res.json();
 
       if (res.ok) {
-        console.log("Login exitoso, navegando a /menu");
+        localStorage.setItem("user", JSON.stringify(data)); // guarda usuario
         navigate("/menu", { state: { user: data } });
       } else {
         alert(data.error);
