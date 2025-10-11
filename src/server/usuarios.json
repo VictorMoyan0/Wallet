@@ -1,3 +1,7 @@
 [
-
+  {
+    "user": "Victor",
+    "password": "$2b$10$npOa2BH39PsnKrT48GEXGO5Ufqn6EQxKPvTAwqbX8eRLKcvbhL9JS",
+    "balance": 0
+  }
 ]
