@@ -6,7 +6,6 @@ function Login() {
     e.preventDefault(); // evita que se recargue la página
     const user = e.target.user.value;
     const passwd = e.target.passwd.value;
-
     try {
       const res = await fetch("http://localhost:3001/login", {
         method: "POST",
