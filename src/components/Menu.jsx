@@ -6,14 +6,16 @@ import Deposit from "./Deposit";
 function Menu() {
     const location = useLocation();
     const { user } = location.state || {}; // saco el user que vino del login
+    // User en estado para poder actualizar saldo
+    const [user, setUser] = useState(location.state?.user ?? null);
+    const [showDeposit, setShowDeposit] = useState(false); // controla el formulario
     useAutoLogout(); // uso el hook para auto logout
-    const handleDeposit = (monto) => {
-        // Simular actualización de saldo (o enviar al backend)
-        const nuevoSaldo = (user?.saldo ?? 0) + monto;
-        const updatedUser = { ...user, saldo: nuevoSaldo };
+    const handleDeposit = (amount) => {
+        const newBalance = (user?.saldo ?? 0) + amount;
+        const updatedUser = { ...user, saldo: newBalance };
         setUser(updatedUser);
-        alert(`Depósito exitoso: ARS ${monto}`);
-        setShowDepositar(false); // cerrar formulario
+        alert(`Deposit successful: ARS ${amount}`);
+        setShowDeposit(false); // cerrar formulario
     };
     return (
         <>
@@ -21,9 +23,10 @@ function Menu() {
                 <h2>Mi Billetera</h2>
                 <p>Usuario: {user?.user ?? "Invitado"}</p>
                 <p>Saldo: ARS {user?.saldo ?? 0}</p>
-                <button>Depositar</button>
+                <button onClick={() => setShowDeposit(true)}>Deposit</button>
                 <button>Transferir</button>
                 <ButtonLogout />
+                {showDeposit && <Deposit onDeposit={handleDeposit} />}
             </div>
         </>
     );
