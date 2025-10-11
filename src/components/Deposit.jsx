@@ -9,17 +9,33 @@ function Deposit({ onDeposit }) {
       setMonto(value);
     }
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
     const number = parseFloat(amount);
     if (isNaN(number) || number <= 0) {
       alert("Ingrese un monto válido");
       return;
     }
-    onDeposit(number); // llama a la función de Menu.jsx
-    setMonto("");        // limpia el input
-  };
+  try {
+    const res = await fetch("http://localhost:3001/deposit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ user: user.user, amount: number })
+    });
+    const data = await res.json();
+    if (res.ok) {
+      onDeposit(number); // actualiza el balance en Menu.jsx
+      alert(`Depósito completado: ARS ${data.balance}`);
+    } else {
+      alert(data.error);
+    }
+  } catch (err) {
+    console.error(err);
+    alert("Error al conectarse al servidor");
+  }
+  setMonto(""); // limpia el input
+};
+
   return (
     <div className="depositar-container">
       <h3>Depositar dinero</h3>
