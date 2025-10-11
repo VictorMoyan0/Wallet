@@ -18,7 +18,7 @@ function Login() {
 
       if (res.ok) {
         console.log("Login exitoso, navegando a /menu");
-        navigate("/menu");
+        navigate("/menu", { state: { user: data } });
       } else {
         alert(data.error);
       }
