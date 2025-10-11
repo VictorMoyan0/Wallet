@@ -7,6 +7,14 @@ function Menu() {
     const location = useLocation();
     const { user } = location.state || {}; // saco el user que vino del login
     useAutoLogout(); // uso el hook para auto logout
+    const handleDeposit = (monto) => {
+        // Simular actualización de saldo (o enviar al backend)
+        const nuevoSaldo = (user?.saldo ?? 0) + monto;
+        const updatedUser = { ...user, saldo: nuevoSaldo };
+        setUser(updatedUser);
+        alert(`Depósito exitoso: ARS ${monto}`);
+        setShowDepositar(false); // cerrar formulario
+    };
     return (
         <>
             <div className="menu-options">
