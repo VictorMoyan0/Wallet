@@ -50,5 +50,18 @@ app.post("/login", async (req, res) => {
   res.status(200).json({ mensaje: "Login exitoso", user: usuario.user });
 });
 
+// Deposito usuario
+app.post("/deposit", (req, res) => {
+  const { user, amount } = req.body;
+  if (!user || !amount || isNaN(amount)) {
+    return res.status(400).json({ error: "Monto inválido o usuario faltante" });
+  }
+  const usuario = usuarios.find(u => u.user === user);
+  if (!usuario) return res.status(404).json({ error: "Usuario no encontrado" });
+    usuario.balance += parseFloat(amount);
+    // Guardar cambios en archivo JSON
+    fs.writeFileSync(FILE_PATH, JSON.stringify(usuarios, null, 2));
+    res.json({ message: "Depósito exitoso", balance: usuario.balance });
+});
 // ------------------- Servidor -------------------
 app.listen(3001, () => console.log("Servidor corriendo en http://localhost:3001"));
