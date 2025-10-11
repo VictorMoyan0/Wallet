@@ -24,7 +24,6 @@ if (fs.existsSync(FILE_PATH)) {
 // Registrar usuario
 app.post("/registrar", async (req, res) => {
   const { user, passwd } = req.body;
-
   // Revisar si el usuario ya existe
   if (usuarios.find(u => u.user === user)) {
     return res.status(400).json({ error: "Usuario ya existe" });
