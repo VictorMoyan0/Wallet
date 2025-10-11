@@ -6,16 +6,13 @@ function Registrar() {
     e.preventDefault(); // evita recargar la página
     const user = e.target.user.value;
     const passwd = e.target.passwd.value;
-
     try {
       const res = await fetch("http://localhost:3001/registrar", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ user, passwd }),
       });
-
       const data = await res.json();
-
       if (res.ok) {
         alert(data.mensaje);
         navigate("/"); // redirige al login después de registrar
