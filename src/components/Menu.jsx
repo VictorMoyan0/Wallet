@@ -6,6 +6,7 @@ import Deposit from "./Deposit";
 
 function Menu() {
     const location = useLocation();
+    const navigate = useNavigate();
     // User en estado para poder actualizar balance
     const [user, setUser] = useState(() => {
         const storedUser = localStorage.getItem("user");
