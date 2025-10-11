@@ -40,13 +40,13 @@ function createUsername(firstName, lastName) {
 // Registrar usuario
 app.post("/register", async (req, res) => {
   const { firstName, lastName, passwd } = req.body;
-  const username = generarUsername(firstName, lastName);
+  const username = createUsername(firstName, lastName);
   if (usuarios.find(u => u.user === username)) {
     return res.status(400).json({ error: "Usuario ya existe" });
   }
   const hashedPassword = await bcrypt.hash(passwd, 10);
-  const cbu = generarCBU();
-  const alias = generarAlias(firstName, lastName);
+  const cbu = createCBU();
+  const alias = createAlias(firstName, lastName);
   usuarios.push({ 
     user: username, 
     password: hashedPassword, 
