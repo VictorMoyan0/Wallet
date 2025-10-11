@@ -89,5 +89,15 @@ app.post("/deposit", (req, res) => {
     fs.writeFileSync(FILE_PATH, JSON.stringify(usuarios, null, 2));
     res.json({ message: "Depósito exitoso", balance: usuario.balance });
 });
+// Obtener saldo actual del usuario
+app.post("/balance", (req, res) => {
+  const { user } = req.body;
+  const usuario = usuarios.find(u => u.user === user);
+  if (!usuario) {
+    return res.status(404).json({ error: "Usuario no encontrado" });
+  }
+  res.json({ balance: usuario.balance });
+});
+
 // ------------------- Servidor -------------------
 app.listen(3001, () => console.log("Servidor corriendo en http://localhost:3001"));
