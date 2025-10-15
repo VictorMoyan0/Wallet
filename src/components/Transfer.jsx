@@ -1,8 +1,8 @@
 function Transfer(){
     return (
-        <>
-            <h1>Page transfer</h1>
-        </>
+        <div className="transfer-container">
+            
+        </div>
     );
 }
 export default Transfer;
