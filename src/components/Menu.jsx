@@ -24,6 +24,11 @@ function Menu() {
         navigate("/transfer");
     }
 
+    const handleWithdrawClick = () => {
+        navigate("/withdraw", { state: { user } });
+    };
+
+
     return (
         <div className="menu-options">
             <h3>Elegir servicio</h3>
@@ -31,7 +36,7 @@ function Menu() {
             <p>Saldo: ARS {user?.balance ?? 0}</p>
             <button onClick={handleDepositClick}>Deposito</button>
             <button onClick={handleTrasnferClick}>Transferir</button>
-            <button>Retiro</button>
+            <button onClick={handleWithdrawClick}>Retiro</button>
             <ButtonLogout />
         </div>
     );
