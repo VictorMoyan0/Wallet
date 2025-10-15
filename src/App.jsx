@@ -18,6 +18,8 @@ function App() {
         <Route path="/menu" element={<Menu />} />
         {/*Page Deposit*/}
         <Route path="/deposit" element={<Deposit />} />
+        {/*Page Transfer*/}
+        <Route path="/transfer" element={<Transfer />} />
       </Routes>
     </HashRouter>
   )
