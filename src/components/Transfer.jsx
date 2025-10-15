@@ -2,6 +2,14 @@ import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
 function Transfer(){
+    
+    const navigate = useNavigate();
+    const location = useLocation();
+    const user = location.state?.user ?? JSON.parse(localStorage.getItem("user"));
+    const [to, setTo] = useState("");
+    const [amount, setAmount] = useState("");
+    const [message, setMessage] = useState("");
+
     return (
         <div className="transfer-container">
             <form onSubmit={handleTransfer}>
