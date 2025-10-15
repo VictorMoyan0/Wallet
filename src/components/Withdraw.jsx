@@ -29,7 +29,6 @@ function Withdraw() {
 
       setMessage(`Retiro exitoso. Nuevo saldo: ARS ${data.balance}`);
       localStorage.setItem("user", JSON.stringify({ ...user, balance: data.balance }));
-      setTimeout(() => navigate("/menu", { state: { user: { ...user, balance: data.balance } } }), 1500);
     } catch (err) {
         setMessage("Error al conectar con el servidor.");
     }
