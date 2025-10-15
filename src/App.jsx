@@ -4,6 +4,7 @@ import Register from "./components/Register";
 import Menu from "./components/Menu";
 import Deposit from "./components/Deposit";
 import Transfer from "./components/Transfer";
+import Withdraw from "./components/Withdraw";
 import './Style.css';
 
 function App() {
@@ -20,6 +21,8 @@ function App() {
         <Route path="/deposit" element={<Deposit />} />
         {/*Page Transfer*/}
         <Route path="/transfer" element={<Transfer />} />
+        {/*Page Withdraw*/}
+        <Route path="/withdraw" element={<Withdraw />} />
       </Routes>
     </HashRouter>
   )
