@@ -3,6 +3,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Menu from "./components/Menu";
 import Deposit from "./components/Deposit";
+import Deposit from "./components/Deposit";
 import './Style.css';
 
 function App() {
