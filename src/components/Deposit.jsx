@@ -46,7 +46,7 @@ function Deposit() {
   };
 
   return (
-    <div className="depositar-container">
+    <div className="deposit-container">
       <h3>Depositar dinero</h3>
       <form onSubmit={handleSubmit}>
         <input
