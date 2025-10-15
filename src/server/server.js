@@ -146,7 +146,31 @@ app.post("/transfer", (req, res) => {
   });
 });
 
-//----------------------------- Withdraw -----------------------------
+// ----------------------------- Withdraw -----------------------------
+
+app.post("/withdraw", (req, res) => {
+  const { user, amount } = req.body;
+
+  if (!user || !amount || isNaN(amount)) {
+    return res.status(400).json({ error: "Monto inválido o usuario faltante" });
+  }
+
+  const usuario = usuarios.find(u => u.user === user);
+  if (!usuario) {
+    return res.status(404).json({ error: "Usuario no encontrado" });
+  }
+
+  const monto = parseFloat(amount);
+
+  if (usuario.balance < monto) {
+    return res.status(400).json({ error: "Saldo insuficiente" });
+  }
+
+  usuario.balance -= monto;
+
+  fs.writeFileSync(FILE_PATH, JSON.stringify(usuarios, null, 2));
+  res.json({ message: "Retiro exitoso", balance: usuario.balance });
+});
 
 // ------------------- Servidor -------------------
 app.listen(3001, () => console.log("Servidor corriendo en http://localhost:3001"));
