@@ -1,6 +1,10 @@
 import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function Deposit({user, onDeposit }) {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const user = location.state?.user; 
   const [amount, setAmount] = useState("");
   // Controla el input, permite solo números y un punto decimal
   const handleChange = (e) => {
@@ -49,6 +53,7 @@ function Deposit({user, onDeposit }) {
         />
         <button type="submit">Depositar</button>
       </form>
+      <button onClick={() => navigate("/menu")}>Volver</button>
     </div>
   );
 }
