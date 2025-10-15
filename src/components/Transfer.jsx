@@ -1,7 +1,7 @@
 function Transfer(){
     return (
         <>
-            <p>Page transfer</p>
+            <h1>Page transfer</h1>
         </>
     );
 }
