@@ -10,13 +10,13 @@ function App() {
   return (
     <HashRouter>
       <Routes>
-        {/* Raíz = Login */}
+        {/*Page Login*/}
         <Route path="/" element={<Login />} />
-        {/* Página de registro */}
+        {/*Page Register*/}
         <Route path="/register" element={<Register />} />
-        {/* Página de menú (después del login) */}
+        {/*Page Menu*/}
         <Route path="/menu" element={<Menu />} />
-        {/* Página de depósito */}
+        {/*Page Deposit*/}
         <Route path="/deposit" element={<Deposit />} />
       </Routes>
     </HashRouter>
