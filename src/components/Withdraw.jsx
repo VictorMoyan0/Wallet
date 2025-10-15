@@ -35,8 +35,15 @@ function Withdraw() {
     }
     };
     return (
-        <div>
-            
+        <div className="withdraw-container">
+            <input
+                type="number"
+                placeholder="Monto a retirar"
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)}
+            />
+            <button onClick={handleWithdraw}>Retirar</button>
+            <p>{message}</p>
         </div>
     );
 }
