@@ -38,6 +38,7 @@ function createUsername(firstName, lastName) {
 // ------------------- Rutas -------------------
 
 // Registrar usuario
+
 app.post("/register", async (req, res) => {
   const { firstName, lastName, passwd } = req.body;
   const username = createUsername(firstName, lastName);
@@ -67,6 +68,7 @@ app.post("/register", async (req, res) => {
 
 
 // Login usuario
+
 app.post("/login", async (req, res) => {
   const { user, passwd } = req.body;
   const usuario = usuarios.find(u => u.user === user);
@@ -77,6 +79,7 @@ app.post("/login", async (req, res) => {
 });
 
 // Deposito usuario
+
 app.post("/deposit", (req, res) => {
   const { user, amount } = req.body;
   if (!user || !amount || isNaN(amount)) {
@@ -89,7 +92,9 @@ app.post("/deposit", (req, res) => {
     fs.writeFileSync(FILE_PATH, JSON.stringify(usuarios, null, 2));
     res.json({ message: "Depósito exitoso", balance: usuario.balance });
 });
+
 // Obtener saldo actual del usuario
+
 app.post("/balance", (req, res) => {
   const { user } = req.body;
   const usuario = usuarios.find(u => u.user === user);
@@ -97,6 +102,48 @@ app.post("/balance", (req, res) => {
     return res.status(404).json({ error: "Usuario no encontrado" });
   }
   res.json({ balance: usuario.balance });
+});
+
+// Transferir dinero entre usuarios
+
+app.post("/transfer", (req, res) => {
+  const { fromUser, to, amount } = req.body;
+
+  if (!fromUser || !to || !amount || isNaN(amount) || amount <= 0) {
+    return res.status(400).json({ error: "Datos inválidos" });
+  }
+
+  const remitente = usuarios.find(u => u.user === fromUser);
+  if (!remitente) return res.status(404).json({ error: "Remitente no encontrado" });
+
+  // Buscar destinatario por alias o CBU
+  const destinatario = usuarios.find(
+    u => u.alias === to || u.cbu.toString() === to
+  );
+  if (!destinatario) {
+    return res.status(404).json({ error: "Destinatario no encontrado" });
+  }
+
+  if (remitente.user === destinatario.user) {
+    return res.status(400).json({ error: "No puedes transferirte a ti mismo" });
+  }
+
+  if (remitente.balance < amount) {
+    return res.status(400).json({ error: "Saldo insuficiente" });
+  }
+
+  // Realizar transferencia
+  remitente.balance -= parseFloat(amount);
+  destinatario.balance += parseFloat(amount);
+
+  // Guardar cambios en archivo
+  fs.writeFileSync(FILE_PATH, JSON.stringify(usuarios, null, 2));
+
+  res.json({
+    message: "Transferencia exitosa",
+    nuevoSaldo: remitente.balance,
+    destino: { user: destinatario.user, alias: destinatario.alias, cbu: destinatario.cbu },
+  });
 });
 
 // ------------------- Servidor -------------------
