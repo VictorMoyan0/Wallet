@@ -35,7 +35,7 @@ function Transfer(){
       setAmount("");
       setTo("");
       // Redirigir al menú después de unos segundos
-      setTimeout(() => navigate("/menu", { state: { user: updatedUser } }), 2000);
+      //setTimeout(() => navigate("/menu", { state: { user: updatedUser } }), 2000);
         }catch (error) {
             console.error(error);
             setMessage("Error al conectar con el servidor");
