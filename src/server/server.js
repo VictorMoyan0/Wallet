@@ -93,7 +93,7 @@ app.post("/deposit", (req, res) => {
     res.json({ message: "Depósito exitoso", balance: usuario.balance });
 });
 
-// Obtener saldo actual del usuario
+// Get current balance user
 
 app.post("/balance", (req, res) => {
   const { user } = req.body;
@@ -104,7 +104,7 @@ app.post("/balance", (req, res) => {
   res.json({ balance: usuario.balance });
 });
 
-// Transferir dinero entre usuarios
+// Transfer user to user
 
 app.post("/transfer", (req, res) => {
   const { fromUser, to, amount } = req.body;
@@ -116,7 +116,7 @@ app.post("/transfer", (req, res) => {
   const remitente = usuarios.find(u => u.user === fromUser);
   if (!remitente) return res.status(404).json({ error: "Remitente no encontrado" });
 
-  // Buscar destinatario por alias o CBU
+  // Search recipient by alias or CBU
   const destinatario = usuarios.find(
     u => u.alias === to || u.cbu.toString() === to
   );
@@ -132,11 +132,11 @@ app.post("/transfer", (req, res) => {
     return res.status(400).json({ error: "Saldo insuficiente" });
   }
 
-  // Realizar transferencia
+  // Realize transfer
   remitente.balance -= parseFloat(amount);
   destinatario.balance += parseFloat(amount);
 
-  // Guardar cambios en archivo
+  // Save changes on JSON file
   fs.writeFileSync(FILE_PATH, JSON.stringify(usuarios, null, 2));
 
   res.json({
