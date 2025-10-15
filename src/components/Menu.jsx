@@ -29,8 +29,9 @@ function Menu() {
             <h3>Elegir servicio</h3>
             <p>Usuario: {user?.user ?? "Invitado"}</p>
             <p>Saldo: ARS {user?.balance ?? 0}</p>
-            <button onClick={handleDepositClick}>Depositar</button>
+            <button onClick={handleDepositClick}>Deposito</button>
             <button onClick={handleTrasnferClick}>Transferir</button>
+            <button>Retiro</button>
             <ButtonLogout />
         </div>
     );
