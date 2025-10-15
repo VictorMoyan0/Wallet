@@ -35,9 +35,9 @@ function createUsername(firstName, lastName) {
   return firstName.toLowerCase() + "." + lastName.toLowerCase();
 }
 
-// ------------------- Rutas -------------------
+// --------------------------------------------------------------------- Routes -------------------------------------------------------------------------
 
-// Registrar usuario
+// ----------------------------- Register User -----------------------------
 
 app.post("/register", async (req, res) => {
   const { firstName, lastName, passwd } = req.body;
@@ -67,7 +67,7 @@ app.post("/register", async (req, res) => {
 });
 
 
-// Login user
+// ----------------------------- Login -----------------------------
 
 app.post("/login", async (req, res) => {
   const { user, passwd } = req.body;
@@ -78,7 +78,7 @@ app.post("/login", async (req, res) => {
     res.status(200).json({ mensaje: "Login exitoso", user: usuario.user, balance: usuario.balance });
 });
 
-// Deposit
+// ----------------------------- Deposit -----------------------------
 
 app.post("/deposit", (req, res) => {
   const { user, amount } = req.body;
@@ -146,7 +146,7 @@ app.post("/transfer", (req, res) => {
   });
 });
 
-// Withdraw
+//----------------------------- Withdraw -----------------------------
 
 // ------------------- Servidor -------------------
 app.listen(3001, () => console.log("Servidor corriendo en http://localhost:3001"));
