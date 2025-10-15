@@ -20,6 +20,10 @@ function Menu() {
         navigate("/deposit", { state: { user }, replace: true });
     };
 
+    const handleTrasnferClick =() => {
+        navigate("/transfer");
+    }
+
     return (
         <>
             <div className="menu-options">
@@ -27,7 +31,7 @@ function Menu() {
                 <p>Usuario: {user?.user ?? "Invitado"}</p>
                 <p>Saldo: ARS {user?.balance ?? 0}</p>
                 <button onClick={handleDepositClick}>Depositar</button>
-                <button>Transferir</button>
+                <button onClick={handleTrasnferClick}>Transferir</button>
                 <ButtonLogout />
             </div>
         </>
