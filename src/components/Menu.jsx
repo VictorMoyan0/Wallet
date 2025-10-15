@@ -23,7 +23,7 @@ function Menu() {
     return (
         <>
             <div className="menu-options">
-                <h2>Mi Billetera</h2>
+                <h3>Elegir servicio</h3>
                 <p>Usuario: {user?.user ?? "Invitado"}</p>
                 <p>Saldo: ARS {user?.balance ?? 0}</p>
                 <button onClick={handleDepositClick}>Depositar</button>
