@@ -33,7 +33,9 @@ function Deposit() {
 
       if (res.ok) {
         alert(`Depósito completado: ARS ${number}`);
-        navigate("/menu", { state: { user: { ...user, balance: data.balance } } });
+        const updatedUser = { ...user, balance: data.balance }; 
+        localStorage.setItem("user", JSON.stringify(updatedUser));
+        navigate("/menu", { state: { user: updatedUser } });
       } else {
         alert(data.error);
       }
