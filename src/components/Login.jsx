@@ -28,7 +28,6 @@ function Login() {
   };
     return (
         <div className="login-container">
-            <h2>Iniciar Sesión</h2>
             <form onSubmit={handleSubmit}>
               <input type="text" name="user" placeholder="Usuario"/>
               <input type="password" name="passwd" placeholder="Contraseña"/>
