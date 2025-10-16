@@ -16,5 +16,23 @@
     "alias": "mrende3785",
     "firstName": "Manuel",
     "lastName": "Rende"
+  },
+  {
+    "user": "agustín.balbuena",
+    "password": "$2b$10$LtqP8/cNVoTjAYUO6ipo6OpYwD6Q1eoKtYyNNw4K7JhNLnB1xxym.",
+    "balance": 10000,
+    "cbu": 4351338446,
+    "alias": "abalbuena2786",
+    "firstName": "Agustín",
+    "lastName": "Balbuena"
+  },
+  {
+    "user": "thiago.koyik",
+    "password": "$2b$10$zdRA5XSIf1rs.SKJsdZZ6OL5Ox.u8l77aEbv.PNSqnXuUjGg87FEa",
+    "balance": 1100,
+    "cbu": 1970044988,
+    "alias": "tkoyik5108",
+    "firstName": "Thiago",
+    "lastName": "Koyik"
   }
 ]
