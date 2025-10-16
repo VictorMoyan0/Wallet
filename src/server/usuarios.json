@@ -2,7 +2,7 @@
   {
     "user": "víctor.moyano",
     "password": "$2b$10$7EZ6dV3DfgRXcuweGbb7wOUMD3V3qCIOAyMwnlYD5wYrmNQrlbM/y",
-    "balance": 900,
+    "balance": 900.2,
     "cbu": 1689955393,
     "alias": "vmoyano3944",
     "firstName": "Víctor",
@@ -34,5 +34,14 @@
     "alias": "tkoyik5108",
     "firstName": "Thiago",
     "lastName": "Koyik"
+  },
+  {
+    "user": "nestor.deangelo",
+    "password": "$2b$10$0RXvSQ6QQUTpT1qzAFt3q.3OMvqLCamaDuKjN.XSGUV8gNAKN0qqm",
+    "balance": 4999.8,
+    "cbu": 2802686145,
+    "alias": "ndeangelo6070",
+    "firstName": "Nestor",
+    "lastName": "Deangelo"
   }
 ]
