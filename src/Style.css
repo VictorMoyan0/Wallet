@@ -237,97 +237,88 @@
 
 /* ---------------------------- Style Menu.jsx  ------------------------------ */
 
+/* ---------------------------- Style Menu.jsx  ------------------------------ */
+
+.menu-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+}
+
 .menu-options {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 40px 20px;
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
-/* Información del usuario */
-.menu-options p {
+/* Bloque de información del usuario */
+.user-info-block {
+  width: 100%;
   background-color: #d32f2f;
-  color: white;
-  padding: 12px 30px;
-  margin: 0 0 2px 0;
-  font-size: 16px;
-  border-radius: 0;
-}
-
-.menu-options p:first-child {
-  font-size: 20px;
-  font-weight: bold;
-  border-radius: 4px 4px 0 0;
-}
-
-.menu-options p:last-of-type {
-  border-radius: 0 0 4px 4px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
   margin-bottom: 30px;
 }
 
+.user-info-block p {
+  margin: 0;
+  padding: 20px 30px;
+  color: white;
+  text-align: center;
+  background-color: #d32f2f;
+}
+
+.user-name {
+  font-size: 22px;
+  font-weight: bold;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  background-color: #d32f2f;
+}
+
+.user-balance {
+  font-size: 18px;
+  font-weight: normal;
+  background-color: #d32f2f;
+}
+
 /* Botones de servicio */
-.menu-options button {
+.menu-button {
   width: 100%;
   background-color: #d32f2f;
   color: white;
   border: none;
-  padding: 15px 30px;
-  font-size: 18px;
-  font-weight: 500;
+  padding: 20px 30px;
+  font-size: 20px;
+  font-weight: 400;
   cursor: pointer;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  margin-bottom: 15px;
-  display: block;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  text-align: center;
 }
 
-.menu-options button:hover {
-  background-color: #b71c1c;
+.menu-button:hover {
+  background-color: #c62828;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.menu-options button:active {
-  transform: translateY(0);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+.menu-button:active {
+  transform: scale(0.98);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-.menu-options button:last-child {
-  margin-bottom: 0;
-}
-
-/* Estilos opcionales para el contenedor principal */
-.container {
-  background: linear-gradient(135deg, #d5d5d5 0%, #e8e8e8 100%);
-  min-height: 100vh;
-  padding: 40px 20px;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Patrón de fondo decorativo (opcional) */
-.container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: repeating-linear-gradient(
-    90deg,
-    transparent,
-    transparent 20px,
-    rgba(0, 0, 0, 0.03) 20px,
-    rgba(0, 0, 0, 0.03) 40px
-  );
-  pointer-events: none;
-  opacity: 0.5;
-}
-
-/* Asegurar que el contenido esté por encima del patrón */
-.menu-options {
-  position: relative;
-  z-index: 1;
+/* Responsive */
+@media (max-width: 400px) {
+  .menu-options {
+    width: 100%;
+    max-width: 340px;
+  }
 }
 
 /* ---------------------------- Style Transfer.jsx  ------------------------------ */
