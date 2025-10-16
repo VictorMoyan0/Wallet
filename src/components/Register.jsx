@@ -27,7 +27,6 @@ function Register() {
   };
     return (
         <div className="register-container">
-            <h2>Registrarse</h2>
             <form onSubmit={handleSubmit}>
                 <input
                   type="text"
@@ -54,7 +53,7 @@ function Register() {
                 <input type="password" name="passwd" placeholder="Contraseña"/>
                 <button type="submit">Enviar</button>
             </form>
-             <button onClick={() => navigate("/")}>Volver</button>
+            <button onClick={() => navigate("/")}>Volver</button>
         </div>
     );
 }
