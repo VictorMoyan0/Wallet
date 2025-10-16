@@ -43,6 +43,7 @@ function Withdraw() {
             />
             <button onClick={handleWithdraw}>Retirar</button>
             <p>{message}</p>
+            <button onClick={() => navigate("/menu", { state: { user } })}>Volver</button>
         </div>
     );
 }
