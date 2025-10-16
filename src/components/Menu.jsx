@@ -30,14 +30,18 @@ function Menu() {
 
 
     return (
+    <div className="menu-container">
         <div className="menu-options">
-            <p>Usuario: {user?.user ?? "Invitado"}</p>
-            <p>Saldo: ARS {user?.balance ?? 0}</p>
-            <button onClick={handleDepositClick}>Deposito</button>
-            <button onClick={handleTrasnferClick}>Transferir</button>
-            <button onClick={handleWithdrawClick}>Retiro</button>
-            <ButtonLogout />
+            <div className="user-info-block">
+                <p className="user-name">Usuario: {user?.user ?? "Invitado"}</p>
+                <p className="user-balance">Saldo: ARS {user?.balance ?? 0}</p>
+            </div>
+            <button className="menu-button" onClick={handleDepositClick}>Deposito</button>
+            <button className="menu-button" onClick={handleTransferClick}>Transferir</button>
+            <button className="menu-button" onClick={handleWithdrawClick}>Retiro</button>
+            <button className="menu-button" onClick={handleLogout}>Cerrar Sesión</button>
         </div>
+    </div>
     );
 }
 export default Menu;
