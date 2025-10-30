@@ -43,14 +43,5 @@
     "alias": "ndeangelo6070",
     "firstName": "Nestor",
     "lastName": "Deangelo"
-  },
-  {
-    "user": "prueba.prueba",
-    "password": "$2b$10$gc/4Bd3Vrh/6jXIWEMLmRODwq1TOlrHX7Ok8ndKLNMc956PzFPFlu",
-    "balance": 10000,
-    "cbu": 9228084641,
-    "alias": "pprueba9792",
-    "firstName": "prueba",
-    "lastName": "prueba"
   }
 ]
